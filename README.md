@@ -40,7 +40,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Screenshots
 
-<img width="1073" alt="readme-toc-screenshot" src="https://github.com/user-attachments/assets/d6463f88-6131-4cd9-be08-a236c725f577" />
+<img width="1057" alt="Screenshot 2025-02-03 at 12 13 45" src="https://github.com/user-attachments/assets/e30fb107-cc49-4736-960f-b3e85dd9b490" />
 
 ## Icons
 
