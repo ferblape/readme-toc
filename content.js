@@ -8,6 +8,19 @@ function generateTOC() {
   const tocContainer = document.createElement("div");
   tocContainer.id = "ce-readme-toc-container";
 
+  // Create hamburger button
+  const hamburger = document.createElement("div");
+  hamburger.className = "toc-hamburger";
+  hamburger.innerHTML = `
+    <svg viewBox="0 0 24 24">
+      <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/>
+    </svg>
+  `;
+
+  // Create content container
+  const tocContent = document.createElement("div");
+  tocContent.className = "toc-content";
+
   const tocList = document.createElement("ul");
   let lastLevels = [tocList];
 
@@ -34,8 +47,29 @@ function generateTOC() {
     lastLevels[lastLevels.length - 1].appendChild(listItem);
   });
 
-  tocContainer.appendChild(tocList);
+  tocContent.appendChild(tocList);
+  tocContainer.appendChild(hamburger);
+  tocContainer.appendChild(tocContent);
   document.body.appendChild(tocContainer);
+
+  // Add event listeners
+  hamburger.addEventListener('click', () => {
+    tocContainer.classList.toggle('open');
+  });
+
+  // Close TOC when clicking a link
+  tocContent.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      tocContainer.classList.remove('open');
+    }
+  });
+
+  // Close TOC when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!tocContainer.contains(e.target)) {
+      tocContainer.classList.remove('open');
+    }
+  });
 }
 
 generateTOC();

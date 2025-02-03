@@ -1,32 +1,106 @@
 #ce-readme-toc-container {
   position: fixed;
-  left: 2px;
-  top: 50px;
-  background: white;
-  border: 1px solid #ccc;
-  padding: 10px 12px 10px 8px;
-  max-width: 144px;
-  font-size: 12px;
+  left: 16px;
+  top: 80px;
   z-index: 1000;
-  max-height: 800px;
-  overflow-y: auto;
+  width: 40px;
+  transition: width 0.3s ease;
 }
 
-#ce-readme-toc-container ul {
+#ce-readme-toc-container.open {
+  width: 250px;
+}
+
+.toc-hamburger {
+  background: white;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.toc-hamburger:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.toc-hamburger svg {
+  width: 20px;
+  height: 20px;
+  fill: #57606a;
+}
+
+.toc-content {
+  position: absolute;
+  left: 0;
+  top: 48px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  width: 250px;
+  font-size: 13px;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  border: 1px solid #e1e4e8;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-10px);
+  transition: all 0.2s ease;
+}
+
+#ce-readme-toc-container.open .toc-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.toc-content ul {
   list-style: none;
   padding: 0;
-  margin-left: 10px;
+  margin: 0;
 }
 
-#ce-readme-toc-container li {
-  margin: 5px 0;
+.toc-content li {
+  margin: 8px 0;
+  line-height: 1.4;
 }
 
-#ce-readme-toc-container a {
+.toc-content a {
   text-decoration: none;
   color: #0366d6;
+  display: block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
-#ce-readme-toc-container a:hover {
-  text-decoration: underline;
+.toc-content a:hover {
+  background-color: #f6f8fa;
+  color: #1a7f37;
+}
+
+.toc-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.toc-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.toc-content::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.toc-content::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }
