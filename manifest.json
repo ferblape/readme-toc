@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "GitHub README TOC",
   "version": "1.0.0",
-  "description": "Adds a table of contents navigation to GitHub README files",
+  "description": "Adds a table of contents navigation to GitHub README files. Code at https://github.com/ferblape/readme-toc",
   "permissions": [
     "activeTab"
   ],
