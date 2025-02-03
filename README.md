@@ -40,7 +40,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Screenshots
 
-[Add screenshots of your extension in action]
+<img width="1073" alt="readme-toc-screenshot" src="https://github.com/user-attachments/assets/d6463f88-6131-4cd9-be08-a236c725f577" />
 
 ## Icons
 
