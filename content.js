@@ -33,7 +33,7 @@ function generateTOC() {
     link.textContent = heading.textContent;
 
     const listItem = document.createElement("li");
-    listItem.style.paddingLeft = `${(level - 1) * 2}px`;
+    listItem.style.paddingLeft = `${(level - 1) * 4}px`;
     listItem.appendChild(link);
 
     if (level > lastLevels.length) {
